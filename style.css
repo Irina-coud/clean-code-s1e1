@@ -40,7 +40,7 @@ body {
   flex-grow: 1;
 }
 
-.todo-wrapper {
+.todo-wrap {
   display: flex;
 }
 
