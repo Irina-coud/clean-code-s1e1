@@ -8,10 +8,10 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-var taskInput=document.querySelector(".new-task");//Add a new task.
-var addButton=document.querySelector(".add-btn");//first button
-var incompleteTaskHolder=document.querySelector(".incomplete-list");//ul of #incompleteTasks
-var completedTasksHolder=document.querySelector(".completed-list");//completed-tasks
+var taskInput=document.querySelector(".todo-box__new-task");//Add a new task.
+var addButton=document.querySelector(".todo-box__add-btn");//first button
+var incompleteTaskHolder=document.querySelector(".incomplete-tasks__list");//ul of #incompleteTasks
+var completedTasksHolder=document.querySelector(".completed-tasks__list");//completed-tasks
 
 
 //New task list item
@@ -34,17 +34,25 @@ var createNewTaskElement=function(taskString){
 
     label.innerText=taskString;
     label.className='label';
+
     listItem.className='list__item';
+
     //Each elements, needs appending
     checkBox.type="checkbox";
     checkBox.className='check';
+
     editInput.type="text";
     editInput.className="item-text";
+    editInput.classList.add("task");
+
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
     editButton.className="edit-btn";
+    editButton.classList.add("btn");
 
     deleteButton.className="delete-btn";
+    deleteButton.classList.add("btn");
+    
     deleteButtonImg.className='delete-img';
     deleteButtonImg.src='./remove.svg';
     deleteButton.appendChild(deleteButtonImg);
